@@ -41,7 +41,6 @@ private BookStoreRepository bookStoreRepository;
 
 
 // 모든 서점 정보 조회
-
 // 출력 : 코리아서점, 아이티문고
 
 	@Test
@@ -65,19 +64,12 @@ private BookStoreRepository bookStoreRepository;
 
 
 // 아이티문고의 이름을 IT문고로 변경해주세요.
-
 // 변경 후엔 t3() 메서드를 실행해 확인해주세요.
-
 // 출력 : 코리아서점, IT문고
 
 	@Test
 
 	void t4() {
-//		Optional<Question> oq = this.questionRepository.findById(1);
-//		assertTrue(oq.isPresent());
-//		Question q = oq.get();
-//		q.setSubject("수정된 제목");
-//		this.questionRepository.save(q);
 		Optional<BookStore> obs= this.bookStoreRepository.findById(2);
 		assertTrue(obs.isPresent());
 		BookStore bs = obs.get();
@@ -153,9 +145,9 @@ private BookStoreRepository bookStoreRepository;
 		System.out.println("모든 책의 제목 출력");
 		for(int i = 0 ;i<all.size();i++) {
 			Book b = all.get(i);
+			System.out.println("책상점이름  : " + b.getBookStore().getStore_Name());
 			System.out.println("제목  : " + b.getBookName());
 			System.out.println("저자  : " + b.getAuthor());
-			System.out.println("책  : " + b.getBookStore());
 		}
 // 구현 및 테스트
 
